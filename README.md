@@ -39,17 +39,17 @@ $ pip install Fabric
 
 Get Started
 -----------
-1. Install latest cookiecutter. (We need '_copy_without_render' function.)
+Install latest cookiecutter. (We need '_copy_without_render' function.)
 ``` 
 $ pip install --upgrade git+https://github.com/audreyr/cookiecutter.git
 ```
 
-1. Execute cookiecutter to create your project.
+Run cookiecutter to create your project.
 ```
 $ cookiecutter gh:flyakite/gae-starter
 ```
 
-1. Create virtual environment in project folder and install Python and Javascript packages.
+Create virtual environment in project folder and install Python and Javascript packages.
 ```	 
 $ cd <your_project>
 $ virtualenv --python=python2.7 venv
@@ -62,7 +62,7 @@ $ bower install
 Run Server
 ----------
 
-Run Gulp tasks and start web server.
+Run Gulp tasks and start web server using Fabric command.
 ```	    
 $ gulp
 ```
