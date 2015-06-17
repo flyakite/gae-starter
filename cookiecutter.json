@@ -13,6 +13,7 @@
         "*.gitignore",
         "*.html",
         "assets",
-        "app/libs"
+        "app/libs",
+        "app/static"
     ]
 }
