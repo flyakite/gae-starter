@@ -20,6 +20,6 @@
     "fontawesome": "~4.3.0",
     "jquery": "~2.1.4",
     "modernizr-min": "~2.8.3",
-    "normalize-scss": "~3.0.3",
+    "normalize-scss": "~3.0.3"
   }
 }
