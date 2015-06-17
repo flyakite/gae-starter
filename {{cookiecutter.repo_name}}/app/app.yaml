@@ -1,5 +1,5 @@
 application: {{cookiecutter.app_engine_id}}
-version: {{cookiecutter.version}}
+version: {{cookiecutter.version|replace('.','-')}}
 runtime: python27
 api_version: 1
 threadsafe: yes
