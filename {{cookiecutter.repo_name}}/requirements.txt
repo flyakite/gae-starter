@@ -5,7 +5,6 @@ PyAMF==0.6.1
 WTForms==2.0.2
 WebOb==1.2.3
 WebTest==2.0.18
-antlr-python-runtime==3.1.1
 beautifulsoup4==4.3.2
 httplib2==0.9.1
 nose==1.3.7
