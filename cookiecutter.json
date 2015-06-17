@@ -1,0 +1,19 @@
+{
+    "project_name": "gae-starter",
+    "app_engine_id": "gae-starter2",
+    "repo_name": "{{ cookiecutter.project_name|replace(' ', '_') }}",
+    "author_name": "Your Name",
+    "email": "Your email",
+    "description": "short project description",
+    "version": "0.1.0",
+    "license": "MIT",
+    "session_secret_key": "secret_key",
+    "local_web_server_port": "5000",
+    "_copy_without_render":[
+        "\\..*",
+        "bower_components",
+        "node_modules",
+        "venv",
+        "*.html",
+    ]
+}

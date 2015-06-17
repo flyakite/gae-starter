@@ -1,0 +1,82 @@
+application: {{cookiecutter.app_engine_id}}
+version: {{cookiecutter.version}}
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+default_expiration: "1d"
+
+builtins:
+- appstats: on #/_ah/stats/
+- remote_api: on #/_ah/remote_api/
+
+
+libraries:
+- name: webapp2
+  version: latest
+- name: jinja2
+  version: latest
+- name: markupsafe
+  version: latest
+- name: lxml
+  version: latest
+- name: webob
+  version: latest
+- name: ssl
+  version: latest
+- name: pycrypto
+  version: latest
+
+skip_files:
+- ^(.*/)?#.*#
+- ^(.*/)?.*~
+- ^(.*/)?.*\.py[co]
+- ^(.*/)?.*/RCS/.*
+- ^(.*/)?\..*
+- ^(.*/)?tests$
+- ^(.*/)?test$
+- ^test/(.*/)?
+- ^README\..*
+- \.gitignore
+- ^\.git/.*
+- \.*\.lint$
+- ^(.*/)?.*\.s[ac]ss
+- ^fabfile\.py
+- ^testrunner\.py
+- ^bower\.json
+- ^gulpfile\.js
+- ^node_modules/(.*/)?
+- ^bower_components/(.*/)?
+
+
+handlers:
+- url: /static
+  static_dir: static
+
+- url: /favicon\.ico
+  static_files: static/favicon.ico
+  upload: static/favicon\.ico
+  expiration: 7d
+
+- url: /robots\.txt
+  static_files: static/robots.txt
+  upload: static/robots\.txt
+  expiration: 7d
+
+- url: /humans\.txt
+  static_files: static/humans.txt
+  upload: static/humans\.txt
+  expiration: 7d
+
+- url: /admin.*
+  script: main.app
+  login: admin
+
+- url: /.*
+  script: main.app
+
+
+#error_handlers:
+#  - error_code: over_quota
+#  - error_code: dos_api_denial
+#  - error_code: timeout

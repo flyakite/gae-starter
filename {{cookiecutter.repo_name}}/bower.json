@@ -1,0 +1,25 @@
+{
+  "name": "{{cookiecutter.project_name}}",
+  "version": "{{cookiecutter.version}}",
+  "authors": [
+    "{{cookiecutter.author_name}} <{{cookiecutter.email}}>"
+  ],
+  "description": "{{cookiecutter.description}}",
+  "keywords": [],
+  "license": "{{cookiecutter.license}}",
+  "homepage": "https://github.com/flyakite",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass-official": "~3.3.4",
+    "fontawesome": "~4.3.0",
+    "jquery": "~2.1.4",
+    "modernizr-min": "~2.8.3",
+    "normalize-scss": "~3.0.3",
+  }
+}

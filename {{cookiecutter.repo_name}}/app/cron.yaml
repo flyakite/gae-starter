@@ -1,0 +1,4 @@
+cron:
+- description: example cron
+  url: /
+  schedule: every monday 00:00

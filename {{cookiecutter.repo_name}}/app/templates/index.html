@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock title %}
+{% block body %}
+    <div class="index">
+      {% include "header.html" %}
+      <div class="index-banner">
+        <div class="inner">
+          <header>
+            <h2>{{project_name}}</h2>
+          </header>
+          {% if logged_in %}
+          <p>
+            You're logged in as {{current_user.username or current_user.name}}. <br>
+            {% if current_user.avatar_url %}
+              <div>
+                <img src="{{current_user.avatar_url}}" alt="Profile Photo">
+              </div>
+            {% endif %}
+          </p>
+          <p>
+            <a href="/logout">Log out</a>
+          </p>
+          {% else %}
+          <p id='sign-up'>
+            <form action="{{ uri_for('index') }}" method="post">
+              <div class="form-group">
+                {{form.username(class="form-control", placeholder="Username")}}
+                <div class="error-message">
+                {%- for error in form.username.errors %}
+                  {{error}} <br>
+                {% endfor %}
+                </div>
+              </div>
+              <div class="form-group">
+                {{form.password(class="form-control", placeholder="Password", autocomplete="off")}}
+                <div class="error-message">
+                {%- for error in form.password.errors %}
+                  {{error}} <br>
+                {% endfor %}
+                </div>
+              </div>
+              <input type="hidden" name="_csrf_token" value="{{csrf_token}}">
+              <div class="error-message">{{error_message}}</div>
+              <button type="submit" class="button">Sign-up</button>
+            </form>
+          </p>
+          {% endif %}
+          <hr>
+          <p>
+            <ul class="auth-login-option">
+              <li><a href="/auth/googleplus?destination_url={{ uri_for('index') }}"
+               class="btn">Google+</a></li>
+              <li><a href="/auth/facebook?destination_url={{ uri_for('index') }}"
+               class="btn">Facebook</a></li>
+              <li><a href="/auth/twitter" class="btn">Twitter</a></li>
+            </ul>
+          </p>
+          <p>
+            <ul class="auth-login-option">
+              <li><a href="/auth/linkedin2?destination_url={{ uri_for('index') }}"
+               class="btn">LinkedIn OAuth 2.0</a></li>
+              <li><a href="/auth/windows_live?destination_url={{ uri_for('index') }}"
+               class="btn">Windows Live</a></li>
+              <li><a href="/auth/foursquare?destination_url={{ uri_for('index') }}"
+               class="btn">FourSquare</a></li>
+            </ul>
+          </p>
+          <footer>
+            <ul class="buttons">
+              <li>
+                <a href="#" class="button">Learn more</a>
+              </li>
+            </ul>
+          </footer>
+        </div>
+      </div>
+    </div>
+{% endblock body %}
+{% block extra_js %}
+<script src="/static/js/main.min.js"></script>
+{% endblock %}
