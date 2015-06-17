@@ -26,55 +26,64 @@ Ingredients
 
 [Demo](https://gae-starter2.appsppot.com)
 
-Get Started
------------
+
+Prerequisits
+------------
+
 1. Download and install [Google App Engine SDK](http://code.google.com/appengine/downloads.html#Google_App_Engine_SDK_for_Python).
 1. Create a unique App ID in [Google Developers Console](https://console.developers.google.com/) and enable needed services and APIs.
-1. Install cookiecutter and Fabric.
+1. Install Fabric
+```
+$ pip install Fabric
+```
 
-    .. code-block:: bash
-	 
-        $ pip install cookiecutter Fabric
+Get Started
+-----------
+1. Install latest cookiecutter. (We need '_copy_without_render' function.)
+``` 
+$ pip install --upgrade git+https://github.com/audreyr/cookiecutter.git
+```
 
 1. Execute cookiecutter to create your project.
+```
+$ cookiecutter gh:flyakite/gae-starter
+```
 
-    .. code-block:: bash
-		
-        $ cookiecutter gh:flyakite/gae-starter
-		
-1. Create virtual environment in project folder and install packages.
+1. Create virtual environment in project folder and install Python and Javascript packages.
+```	 
+$ cd <your_project>
+$ virtualenv --python=python2.7 venv
+$ . venv/bin/activate
+$ pip install -r requirements.txt
+$ npm install
+$ bower install
+```
 
-    .. code-block:: bash
-	 
-        $ virtualenv --python=python2.7 venv
-		$ . venv/bin/activate
-        # Install Python packages
-        $ pip install -r requirements.txt
-        # Install bower packages
-        $ bower install
+Run Server
+----------
 
-1. Run Gulp tasks and start web server.
+Run Gulp tasks and start web server.
+```	    
+$ gulp
+```
+```	
+$ fab start
+```
 
-    .. code-block:: bash
-	    
-        # Run gulp tasks
-        # Tasks are defined in gulpfile.js
-        $ gulp
-		
-        # Run web server
-        # Web server port and settings are in fabfile.py 
-        $ fab start
-        
-1. Run unittest and deploy to server.
- 
-    .. code-block:: bash
-	    
-        # Run unittest
-        $ fab test
-		
-        # Deploy to server 
-        $ fab deploy
+Run Test
+--------
 
+```
+$ fab test
+```
+
+Deploy to GAE
+-------------
+
+Run unittest and deploy to server.
+```	
+$ fab deploy
+```
 
 Social Login
 ------------
