@@ -7,13 +7,12 @@
     "description": "short project description",
     "version": "0.1.0",
     "license": "MIT",
-    "session_secret_key": "secret_key",
+    "secret_key": "{% for column in items|slice(50) %}{{ 'abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)'|random }}{% endfor %}",
     "local_web_server_port": "5000",
     "_copy_without_render":[
-        "\\..*",
-        "bower_components",
-        "node_modules",
-        "venv",
+        "*.gitignore",
         "*.html",
+        "assets",
+        "app/libs"
     ]
 }

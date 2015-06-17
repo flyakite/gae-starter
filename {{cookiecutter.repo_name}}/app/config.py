@@ -38,7 +38,7 @@ config = {
     'project_name': "{{ cookiecutter.project_name }}",
 
     # https://webapp-improved.appspot.com/_modules/webapp2_extras/sessions.html
-    'webapp2_extras.sessions': {'secret_key': '{{ cookiecutter.session_secret_key }}'},
+    'webapp2_extras.sessions': {'secret_key': '{{ cookiecutter.secret_key }}'},
 
     # https://webapp-improved.appspot.com/_modules/webapp2_extras/auth.html
     'webapp2_extras.auth': {'user_model': 'models.user.User'},
