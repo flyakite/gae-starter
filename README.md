@@ -39,9 +39,10 @@ $ pip install Fabric
 
 Get Started
 -----------
-Install latest cookiecutter. (We need '_copy_without_render' function.)
+Install latest cookiecutter and ruamel.yaml. (We need '_copy_without_render' function.)
 ``` 
 $ pip install --upgrade git+https://github.com/audreyr/cookiecutter.git
+$ pip install ruamel.yaml
 ```
 
 Run cookiecutter to create your project.
