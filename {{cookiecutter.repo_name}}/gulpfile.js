@@ -18,6 +18,7 @@ var config = {
 //run livereload
 gulp.task('connect', function() {
 	connect.server({
+		port: 9876,
 		root: 'app',
 		livereload: true
 	});
