@@ -24,7 +24,7 @@ Ingredients
 + [jQuery](http://jquery.com) A fast, small, and feature-rich JavaScript library.
 + [Twitter Bootstrap](http://twitter.github.com/bootstrap/) Sleek, intuitive, and powerful front-end framework. (Optional)
 
-[Demo](https://gae-starter2.appsppot.com)
+[Demo](https://gae-starter2.appspot.com)
 
 
 Prerequisits
@@ -46,7 +46,7 @@ $ pip install ruamel.yaml
 ```
 
 Run cookiecutter to create your project.
-```
+```a
 $ cookiecutter gh:flyakite/gae-starter
 ```
 
